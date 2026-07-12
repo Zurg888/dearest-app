@@ -1,6 +1,7 @@
 const STORE = 'dearly-v1';
 const state = load();
 let tab = state.seenWelcome ? 'home' : 'welcome';
+let activeMemoryId = null;
 
 function load(){
   const fallback = {
@@ -18,6 +19,7 @@ function save(){ localStorage.setItem(STORE, JSON.stringify(state)); }
 function uid(){ return Math.random().toString(36).slice(2,10); }
 function today(){ return new Date().toISOString().slice(0,10); }
 function prettyDate(d){ return new Date(d+'T12:00:00').toLocaleDateString(undefined,{month:'long',day:'numeric',year:'numeric'}); }
+function esc(value){ return String(value ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
 function toast(msg){ const el=document.createElement('div'); el.className='toast'; el.textContent=msg; document.body.append(el); setTimeout(()=>el.remove(),1800); }
 
 const screen = document.querySelector('#screen');
@@ -30,6 +32,8 @@ document.addEventListener('click', e => {
   if(!action) return;
   if(action === 'start'){ state.seenWelcome = true; save(); tab='home'; render(); }
   if(action === 'add-person'){ addPerson(); }
+  if(action === 'open-memory'){ activeMemoryId = e.target.closest('[data-id]')?.dataset.id; tab='memory'; render(); }
+  if(action === 'back-timeline'){ tab='timeline'; render(); }
   if(action === 'clear'){ if(confirm('Clear Dearly data on this device?')){ localStorage.removeItem(STORE); location.reload(); } }
 });
 
@@ -43,6 +47,7 @@ function render(){
   if(tab==='write') return renderWrite();
   if(tab==='record') return renderRecord();
   if(tab==='timeline') return renderTimeline();
+  if(tab==='memory') return renderMemoryDetail();
   if(tab==='settings') return renderSettings();
 }
 function renderWelcome(){ screen.innerHTML = document.querySelector('#welcomeTemplate').innerHTML; }
@@ -68,7 +73,7 @@ function renderHome(){
 }
 function quick(icon,title,sub,target){ return `<button class="quick-card" data-tab="${target}"><div class="symbol">${icon}</div><b>${title}</b><span>${sub}</span></button>`; }
 function personRow(p){ return `<article class="person"><div class="avatar">${p.name[0]||'D'}</div><div><strong>${p.name}</strong><small>${p.relation} · ${p.note||'Private keepsakes'}</small></div></article>`; }
-function memoryRow(m){ return `<article class="memory"><div class="avatar">${m.type==='voice'?'◉':'✉'}</div><div><strong>${m.title}</strong><small>${m.person||'Dearly'} · ${prettyDate(m.date)}</small></div></article>`; }
+function memoryRow(m){ return `<button class="memory" data-action="open-memory" data-id="${m.id}"><div class="avatar">${m.type==='voice'?'◉':'✉'}</div><div><strong>${m.title}</strong><small>${m.person||'Dearly'} · ${prettyDate(m.date)} · Tap to open</small></div></button>`; }
 function renderPeople(){
   screen.innerHTML = `<section class="card"><h2>Loved Ones</h2><p>Organize letters, voice notes, and memories by the people you love.</p><button class="primary" data-action="add-person">Add loved one</button></section><div class="section-title"><h3>Your circle</h3><span class="pill">${state.people.length}</span></div><div class="list">${state.people.map(personRow).join('')}</div>`;
 }
@@ -82,7 +87,22 @@ function renderRecord(){
 }
 function renderTimeline(){
   const items = state.memories.slice().reverse();
-  screen.innerHTML = `<section class="card"><h2>Timeline</h2><p>Your family keepsakes, saved by date.</p></section>${items.length?items.map(m=>`<div class="timeline-date">${prettyDate(m.date)}</div>${memoryRow(m)}`).join(''):'<div class="card empty">No memories yet.</div>'}`;
+  screen.innerHTML = `<section class="card"><h2>Timeline</h2><p>Your family keepsakes, saved by date. Tap any keepsake to open it.</p></section>${items.length?items.map(m=>`<div class="timeline-date">${prettyDate(m.date)}</div>${memoryRow(m)}`).join(''):'<div class="card empty">No memories yet.</div>'}`;
+}
+function renderMemoryDetail(){
+  const memory = state.memories.find(m => m.id === activeMemoryId) || state.memories[state.memories.length - 1];
+  if(!memory){ tab='timeline'; return renderTimeline(); }
+  activeMemoryId = memory.id;
+  const isVoice = memory.type === 'voice';
+  screen.innerHTML = `<section class="card memory-detail">
+    <button class="small-btn" data-action="back-timeline">← Timeline</button>
+    <p class="eyebrow">${esc(memory.person || 'Dearly')} · ${prettyDate(memory.date)}</p>
+    <h2>${esc(memory.title)}</h2>
+    ${isVoice
+      ? `<div class="recorder"><div class="mic">◉</div><p>This prototype saved a voice-note placeholder. Real playback comes when we add microphone recording.</p></div>`
+      : `<article class="letter-view">${esc(memory.body || '').replace(/\n/g,'<br>')}</article>`}
+    <div class="settings-row"><span class="pill">${esc(memory.delivery || 'Keep private')}</span><span class="pill">${isVoice?'Voice note':'Letter'}</span></div>
+  </section>`;
 }
 function renderSettings(){
   screen.innerHTML = `<section class="card"><h2>Heirloom Vault</h2><p>Dearly is local-first in this prototype. Your saved letters stay on this device until we add accounts and encrypted cloud sync.</p><div class="grid"><button class="secondary" data-tab="write">Create keepsake</button><button class="secondary" data-action="clear">Reset this device</button></div></section>`;
