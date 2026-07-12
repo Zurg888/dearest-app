@@ -4,45 +4,30 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Dearly</title>
-  <meta name="theme-color" content="#f7efe4" />
+  <meta name="theme-color" content="#fff8f0" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Dearly" />
   <link rel="manifest" href="./manifest.webmanifest" />
   <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
   <link rel="icon" href="./assets/icon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="./styles.css?v=2" />
+  <link rel="stylesheet" href="./styles.css?v=3" />
 </head>
 <body>
+  <div class="ambient"></div>
   <div class="app-shell">
     <header class="topbar">
-      <div>
-        <p class="eyebrow">Private family keepsakes</p>
-        <h1>Dearly</h1>
-      </div>
-      <button class="icon-button" id="settingsBtn" aria-label="Settings">D</button>
+      <button class="brand-chip" data-tab="home" aria-label="Dearly home"><img src="./assets/dearly-logo.jpeg" alt="" /><span>Dearly</span></button>
+      <button class="icon-button" id="settingsBtn" aria-label="Settings">⚙</button>
     </header>
-
     <main id="screen" class="screen"></main>
-
     <nav class="bottom-nav" aria-label="Primary">
-      <button data-tab="home" class="active">Home</button>
-      <button data-tab="people">Loved Ones</button>
-      <button data-tab="write">Write</button>
-      <button data-tab="record">Voice</button>
-      <button data-tab="timeline">Timeline</button>
+      <button data-tab="home" class="active"><span>⌂</span>Home</button>
+      <button data-tab="people"><span>◌</span>People</button>
+      <button data-tab="write"><span>✎</span>Write</button>
+      <button data-tab="record"><span>◉</span>Voice</button>
+      <button data-tab="timeline"><span>◇</span>Vault</button>
     </nav>
   </div>
-
-  <template id="welcomeTemplate">
-    <section class="hero-card">
-      <div class="logo-mark">D</div>
-      <p class="eyebrow">For every someday</p>
-      <h2>A private place to keep what matters.</h2>
-      <p>Save letters, voice notes, photos, and memories for the people you love dearly.</p>
-      <button class="primary" data-action="start">Begin your vault</button>
-    </section>
-  </template>
-
-  <script src="./app.js?v=2" defer></script>
+  <script src="./app.js?v=3" defer></script>
 </body>
 </html>
