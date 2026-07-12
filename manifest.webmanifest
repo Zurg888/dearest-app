@@ -1,6 +1,6 @@
 {
-  "name": "KinKeep",
-  "short_name": "KinKeep",
+  "name": "Dearest",
+  "short_name": "Dearest",
   "description": "Letters, voice notes, and memories for the people you love.",
   "start_url": "./index.html",
   "display": "standalone",

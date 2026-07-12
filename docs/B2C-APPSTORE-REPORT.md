@@ -1,11 +1,11 @@
-# KinKeep B2C App Store Report
+# Dearest B2C App Store Report
 
 ## Positioning
-KinKeep should not launch as a generic journal, genealogy tool, photo album, or death-planning app. The clearest consumer promise is:
+Dearest should not launch as a generic journal, genealogy tool, photo album, or death-planning app. The clearest consumer promise is:
 
-**KinKeep is a private family keepsake app for saving letters, voice notes, photos, and memories for the people you love.**
+**Dearest is a private family keepsake app for saving letters, voice notes, photos, and memories for the people you love.**
 
-Best App Store name: **KinKeep: Family Memories**
+Best App Store name: **Dearest: Family Memories**
 Best subtitle: **Letters, voice notes, photos**
 
 ## Target personas
@@ -37,8 +37,8 @@ Best subtitle: **Letters, voice notes, photos**
 
 ## Subscription model
 **Free:** 20–30 memories, limited voice minutes, 1 vault, basic prompts.
-**KinKeep Plus:** $4.99/mo or $39.99/yr — unlimited letters, more voice storage, prompts, scheduled letters, export, PIN/Face ID.
-**KinKeep Family:** $8.99/mo or $79.99/yr — shared family vault, multiple members, collaborative prompts, more storage, legacy contact.
+**Dearest Plus:** $4.99/mo or $39.99/yr — unlimited letters, more voice storage, prompts, scheduled letters, export, PIN/Face ID.
+**Dearest Family:** $8.99/mo or $79.99/yr — shared family vault, multiple members, collaborative prompts, more storage, legacy contact.
 **Add-ons:** printed memory book $49–$99, audio QR book, lifetime archive $149–$249.
 
 Do not hostage memories behind subscription. If cancelled, user should retain read-only access and export options.
@@ -94,4 +94,4 @@ Other keyword clusters: family stories, memory book, letters to my child, voice 
 - 1 Second Everyday: https://apps.apple.com/us/app/1-second-everyday-video-diary/id587823548
 
 ## Bottom line
-KinKeep wins if it owns the relational job: **not “I need a journal,” but “I need to save something for someone I love.”** Build trust first, capture emotional value fast, and monetize through storage, family sharing, scheduled delivery, transcription, and keepsake exports.
+Dearest wins if it owns the relational job: **not “I need a journal,” but “I need to save something for someone I love.”** Build trust first, capture emotional value fast, and monetize through storage, family sharing, scheduled delivery, transcription, and keepsake exports.

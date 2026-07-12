@@ -1,15 +1,15 @@
-# KinKeep B2B Hospital / Hospice Report
+# Dearest B2B Hospital / Hospice Report
 
 ## Executive thesis
-KinKeep should be pitched as a low-burden legacy and family-connection layer for serious-illness care: a private way for patients to record letters, voice notes, photos, stories, blessings, and messages for loved ones. Hospitals, hospices, oncology programs, and palliative care teams already care about dignity, family communication, whole-person care, bereavement support, and patient/family experience. KinKeep gives them a scalable way to offer that without turning clinicians into editors or tech support.
+Dearest should be pitched as a low-burden legacy and family-connection layer for serious-illness care: a private way for patients to record letters, voice notes, photos, stories, blessings, and messages for loved ones. Hospitals, hospices, oncology programs, and palliative care teams already care about dignity, family communication, whole-person care, bereavement support, and patient/family experience. Dearest gives them a scalable way to offer that without turning clinicians into editors or tech support.
 
-**Positioning:** KinKeep helps hospitals and hospice teams offer every seriously ill patient a dignified way to leave love, voice, stories, and memories for the people who matter most.
+**Positioning:** Dearest helps hospitals and hospice teams offer every seriously ill patient a dignified way to leave love, voice, stories, and memories for the people who matter most.
 
 ## Why they would care
-- **Patient/family experience:** Families remember compassion. KinKeep becomes a tangible “they cared about us” moment.
+- **Patient/family experience:** Families remember compassion. Dearest becomes a tangible “they cared about us” moment.
 - **Whole-person palliative care:** Palliative care is quality-of-life care for patients and families, not only symptom management.
-- **Bereavement readiness:** Families often wish they had more voice, stories, and letters. KinKeep gives them a structured path before it is too late.
-- **Staff scalability:** Chaplains/social workers already do memory work informally. KinKeep standardizes it with a two-minute intro and QR/SMS invite.
+- **Bereavement readiness:** Families often wish they had more voice, stories, and letters. Dearest gives them a structured path before it is too late.
+- **Staff scalability:** Chaplains/social workers already do memory work informally. Dearest standardizes it with a two-minute intro and QR/SMS invite.
 - **Brand differentiation:** A hospital or hospice can market a signature compassion/legacy program.
 
 ## Buyers and champions
@@ -18,15 +18,15 @@ KinKeep should be pitched as a low-burden legacy and family-connection layer for
 **Gatekeepers:** IT, security, compliance, legal, privacy officer.
 
 ## Workflow
-1. Eligible patient/family is offered KinKeep during hospice admission, palliative consult, oncology milestone, ICU family support, or bereavement-risk interaction.
+1. Eligible patient/family is offered Dearest during hospice admission, palliative consult, oncology milestone, ICU family support, or bereavement-risk interaction.
 2. Staff uses a short script: “Many patients like to save stories, letters, or voice notes for family. We offer a private tool if you’d like.”
 3. Patient/family opens QR/SMS invite.
-4. KinKeep guides them through prompts: love notes, life stories, advice, birthdays, faith/blessings, family traditions.
+4. Dearest guides them through prompts: love notes, life stories, advice, birthdays, faith/blessings, family traditions.
 5. Patient chooses recipients and access/delivery settings.
 6. Staff dashboard tracks operational metadata only: invited, activated, memory saved, recipient added — not private content.
 
 ## Security and compliance requirements
-To sell B2B, KinKeep needs a HIPAA-ready roadmap:
+To sell B2B, Dearest needs a HIPAA-ready roadmap:
 - Business Associate Agreement capability
 - Encryption in transit and at rest
 - Role-based admin access
@@ -49,7 +49,7 @@ Do **not** lead with EHR integration. Phase 1 should be QR/SMS invite only. Add 
 - Optional per-activated-family pricing: $50–$150/account, but annual site license is cleaner for procurement
 
 ## Pilot success metrics
-- Patients/families offered KinKeep
+- Patients/families offered Dearest
 - Acceptance and activation rate
 - Memories created per activated family
 - Voice minutes saved
@@ -63,11 +63,11 @@ Do **not** lead with EHR integration. Phase 1 should be QR/SMS invite only. Add 
 Target: 30–50% activation among invited eligible families, 70%+ of activated users create at least one memory, strong qualitative feedback, and one internal champion willing to present results.
 
 ## Objections and answers
-**“We already have chaplains/social workers.”** KinKeep does not replace them. It helps them scale legacy care and creates consistency.
+**“We already have chaplains/social workers.”** Dearest does not replace them. It helps them scale legacy care and creates consistency.
 
 **“Staff are overloaded.”** Staff only introduces the QR/SMS. No editing or content management required.
 
-**“Is this HIPAA compliant?”** Production KinKeep should be sold with BAA, encryption, audit logs, access controls, deletion/export policies, and vendor-risk packet.
+**“Is this HIPAA compliant?”** Production Dearest should be sold with BAA, encryption, audit logs, access controls, deletion/export policies, and vendor-risk packet.
 
 **“This is emotionally sensitive.”** Yes. That is why it is consent-based, private by default, and patient-controlled.
 
@@ -75,7 +75,7 @@ Target: 30–50% activation among invited eligible families, 70%+ of activated u
 Start with hospice and palliative care, especially nonprofit or faith-based systems. They have the clearest mission fit and strongest emotional value.
 
 ## Pitch line
-**KinKeep gives serious-illness and hospice teams a scalable, private way to help patients preserve love, voice, stories, and meaning for their families — improving family experience while reinforcing compassionate whole-person care.**
+**Dearest gives serious-illness and hospice teams a scalable, private way to help patients preserve love, voice, stories, and meaning for their families — improving family experience while reinforcing compassionate whole-person care.**
 
 ## Useful source links
 - CAPC palliative care overview: https://www.capc.org/about/palliative-care/
