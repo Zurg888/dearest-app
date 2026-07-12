@@ -1,11 +1,11 @@
-# Dearly B2C App Store Report
+# KinKeep B2C App Store Report
 
 ## Positioning
-Dearly should not launch as a generic journal, genealogy tool, photo album, or death-planning app. The clearest consumer promise is:
+KinKeep should not launch as a generic journal, genealogy tool, photo album, or death-planning app. The clearest consumer promise is:
 
-**Dearly is a private family keepsake app for saving letters, voice notes, photos, and memories for the people you love.**
+**KinKeep is a private family keepsake app for saving letters, voice notes, photos, and memories for the people you love.**
 
-Best App Store name: **Dearly: Family Memories**  
+Best App Store name: **KinKeep: Family Memories**
 Best subtitle: **Letters, voice notes, photos**
 
 ## Target personas
@@ -36,9 +36,9 @@ Best subtitle: **Letters, voice notes, photos**
 - Export anytime
 
 ## Subscription model
-**Free:** 20–30 memories, limited voice minutes, 1 vault, basic prompts.  
-**Dearly Plus:** $4.99/mo or $39.99/yr — unlimited letters, more voice storage, prompts, scheduled letters, export, PIN/Face ID.  
-**Dearly Family:** $8.99/mo or $79.99/yr — shared family vault, multiple members, collaborative prompts, more storage, legacy contact.  
+**Free:** 20–30 memories, limited voice minutes, 1 vault, basic prompts.
+**KinKeep Plus:** $4.99/mo or $39.99/yr — unlimited letters, more voice storage, prompts, scheduled letters, export, PIN/Face ID.
+**KinKeep Family:** $8.99/mo or $79.99/yr — shared family vault, multiple members, collaborative prompts, more storage, legacy contact.
 **Add-ons:** printed memory book $49–$99, audio QR book, lifetime archive $149–$249.
 
 Do not hostage memories behind subscription. If cancelled, user should retain read-only access and export options.
@@ -78,11 +78,11 @@ Other keyword clusters: family stories, memory book, letters to my child, voice 
 - Read-only access after cancellation
 
 ## Feature backlog
-**Capture:** real voice recording, transcription, photo/video attachments, prompts, one-tap grandparent mode.  
-**Organize:** people profiles, tags, timeline, search, favorites, locked notes.  
-**Delivery:** share now, deliver later, open-when letters, legacy contact, birthday/milestone unlocks.  
-**Collaboration:** family vault, invite relatives, comments/reactions, prompt requests.  
-**Exports:** PDF, ZIP, printed book, audio QR codes, annual keepsake.  
+**Capture:** real voice recording, transcription, photo/video attachments, prompts, one-tap grandparent mode.
+**Organize:** people profiles, tags, timeline, search, favorites, locked notes.
+**Delivery:** share now, deliver later, open-when letters, legacy contact, birthday/milestone unlocks.
+**Collaboration:** family vault, invite relatives, comments/reactions, prompt requests.
+**Exports:** PDF, ZIP, printed book, audio QR codes, annual keepsake.
 **Premium AI:** summarize recordings, turn voice into letter, suggest prompts, searchable transcripts. Avoid AI voice cloning until consent/legal model is excellent.
 
 ## Comparable products
@@ -94,4 +94,4 @@ Other keyword clusters: family stories, memory book, letters to my child, voice 
 - 1 Second Everyday: https://apps.apple.com/us/app/1-second-everyday-video-diary/id587823548
 
 ## Bottom line
-Dearly wins if it owns the relational job: **not “I need a journal,” but “I need to save something for someone I love.”** Build trust first, capture emotional value fast, and monetize through storage, family sharing, scheduled delivery, transcription, and keepsake exports.
+KinKeep wins if it owns the relational job: **not “I need a journal,” but “I need to save something for someone I love.”** Build trust first, capture emotional value fast, and monetize through storage, family sharing, scheduled delivery, transcription, and keepsake exports.
