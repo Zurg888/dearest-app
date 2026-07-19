@@ -13,7 +13,7 @@
   <link rel="manifest" href="./manifest.webmanifest" />
   <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
   <link rel="icon" href="./assets/icon-192.png" type="image/png" />
-  <link rel="stylesheet" href="./styles.css?v=14" />
+  <link rel="stylesheet" href="./styles.css?v=15" />
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
@@ -51,10 +51,28 @@
       </div>
     </section>
 
-    <section id="story" class="reel-strip" aria-label="dearest story frames">
-      <article><span>01</span><strong>Capture one small moment.</strong></article>
-      <article><span>02</span><strong>Choose who it is for.</strong></article>
-      <article><span>03</span><strong>Keep it private, share it, or seal it for someday.</strong></article>
+    <section id="story" class="activation section-pad" aria-label="Scroll-activated dearest experience">
+      <div class="activation-sticky">
+        <div class="activation-copy">
+          <p class="eyebrow">SCROLL TO ACTIVATE</p>
+          <h2>Every movement reveals a little more of the memory.</h2>
+          <p>Dearest should feel alive — like opening a private keepsake box, not reading a feature checklist.</p>
+        </div>
+        <div class="activation-screen" data-active-step="0">
+          <div class="screen-glow"></div>
+          <img class="screen-layer layer-home is-active" src="./assets/marketing/hero-home.jpeg" alt="dearest home screen." />
+          <img class="screen-layer layer-memory" src="./assets/marketing/new-memory.jpeg" alt="Create a new family memory." />
+          <img class="screen-layer layer-vault" src="./assets/marketing/sealed-vault.jpeg" alt="Sealed future memory vault." />
+          <div class="memory-note note-a">Voice note saved</div>
+          <div class="memory-note note-b">For someday</div>
+          <div class="memory-note note-c">Story card ready</div>
+        </div>
+      </div>
+      <div class="activation-steps">
+        <article data-step="0"><span>A quiet place</span><strong>The home screen wakes up as you enter.</strong><p>Soft light, private memories, and the people you care about most.</p></article>
+        <article data-step="1"><span>Add the moment</span><strong>Cards slide forward when the story grows.</strong><p>Letters, photos, videos, and voice notes become one keepsake.</p></article>
+        <article data-step="2"><span>Seal it for later</span><strong>The vault activates for future memories.</strong><p>Save something now for a birthday, graduation, anniversary, or someday.</p></article>
+      </div>
     </section>
 
     <section id="features" class="feature-grid section-pad">
@@ -128,5 +146,6 @@
     <a href="/privacy">Privacy Policy</a>
     <a href="mailto:hello@dearestapp.com">Contact</a>
   </footer>
+  <script src="./site.js?v=15"></script>
 </body>
 </html>
