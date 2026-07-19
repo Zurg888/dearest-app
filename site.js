@@ -1,35 +1,56 @@
 (() => {
-  const root = document.documentElement;
-  const activation = document.querySelector('.activation');
-  const screen = document.querySelector('.activation-screen');
-  const steps = [...document.querySelectorAll('.activation-steps article')];
-  const layers = [...document.querySelectorAll('.screen-layer')];
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const sections = [
+    ...document.querySelectorAll('.hero, .quiet-scene, .feature-card, .showcase, .privacy-panel, .final-cta')
+  ];
+  const revealItems = [
+    ...document.querySelectorAll('.hero-copy, .hero-stage, .quiet-copy, .quiet-visual, .feature-card, .showcase-copy, .mosaic, .privacy-panel > div, .final-cta > div, .final-cta > img')
+  ];
 
-  const setActive = (index) => {
-    if (!screen) return;
-    const active = Math.max(0, Math.min(steps.length - 1, index));
-    screen.dataset.activeStep = String(active);
-    steps.forEach((step, i) => step.classList.toggle('is-active', i === active));
-    layers.forEach((layer, i) => layer.classList.toggle('is-active', i === active));
+  document.documentElement.classList.add(reduceMotion ? 'reduced-motion' : 'motion-ready');
+
+  if (reduceMotion) {
+    revealItems.forEach((item) => item.classList.add('is-visible'));
+    return;
+  }
+
+  sections.forEach((section) => section.classList.add('motion-section'));
+  revealItems.forEach((item) => item.classList.add('motion-item'));
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px 20% 0px' });
+
+  revealItems.forEach((item) => observer.observe(item));
+
+  let ticking = false;
+  const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
+
+  const update = () => {
+    const h = window.innerHeight || 1;
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      const raw = (h - rect.top) / (h + rect.height);
+      const progress = clamp(raw);
+      section.style.setProperty('--p', progress.toFixed(4));
+      section.style.setProperty('--center', clamp(1 - Math.abs(progress - 0.5) * 2).toFixed(4));
+    });
+    ticking = false;
   };
 
-  const updateScroll = () => {
-    if (!activation) return;
-    const rect = activation.getBoundingClientRect();
-    const total = Math.max(1, rect.height - window.innerHeight);
-    const progress = Math.min(1, Math.max(0, -rect.top / total));
-    root.style.setProperty('--scroll', String(Math.round(progress * 360)));
-    root.style.setProperty('--activation-progress', progress.toFixed(3));
-    setActive(Math.min(2, Math.floor(progress * 3.05)));
+  const requestUpdate = () => {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(update);
+    }
   };
 
-  setActive(0);
-  updateScroll();
-  window.addEventListener('scroll', updateScroll, { passive: true });
-  window.addEventListener('resize', updateScroll, { passive: true });
-
-  window.addEventListener('pointermove', (event) => {
-    root.style.setProperty('--mx', String(Math.round((event.clientX / window.innerWidth) * 100)));
-    root.style.setProperty('--my', String(Math.round((event.clientY / window.innerHeight) * 100)));
-  }, { passive: true });
+  update();
+  window.addEventListener('scroll', requestUpdate, { passive: true });
+  window.addEventListener('resize', requestUpdate, { passive: true });
 })();
