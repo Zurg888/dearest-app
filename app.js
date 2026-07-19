@@ -1,5 +1,5 @@
 const STORE = 'dearest-v1';
-const LEGACY_STORES = ['kinkeep-v1','dearly-v1'];
+const LEGACY_STORES = ['dearly-v1'];
 for (const key of LEGACY_STORES) {
   if(!localStorage.getItem(STORE) && localStorage.getItem(key)) localStorage.setItem(STORE, localStorage.getItem(key));
 }

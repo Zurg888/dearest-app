@@ -11,6 +11,9 @@
       ]
     }
   ],
+  "redirects": [
+    {"source": "/(.*)", "has": [{"type": "host", "value": "www.dearestapp.com"}], "destination": "https://dearestapp.com/$1", "permanent": true}
+  ],
   "rewrites": [
     {"source": "/privacy", "destination": "/privacy.html"}
   ]
