@@ -1,21 +1,14 @@
 (() => {
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const sections = [
-    ...document.querySelectorAll('.hero, .quiet-scene, .feature-card, .showcase, .privacy-panel, .final-cta')
-  ];
-  const revealItems = [
-    ...document.querySelectorAll('.hero-copy, .hero-stage, .quiet-copy, .quiet-visual, .feature-card, .showcase-copy, .mosaic, .privacy-panel > div, .final-cta > div, .final-cta > img')
-  ];
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const html = document.documentElement;
+  const reveals = [...document.querySelectorAll('.reveal')];
 
-  document.documentElement.classList.add(reduceMotion ? 'reduced-motion' : 'motion-ready');
-
-  if (reduceMotion) {
-    revealItems.forEach((item) => item.classList.add('is-visible'));
+  if (reduce) {
+    reveals.forEach((el) => el.classList.add('is-visible'));
     return;
   }
 
-  sections.forEach((section) => section.classList.add('motion-section'));
-  revealItems.forEach((item) => item.classList.add('motion-item'));
+  html.classList.add('motion-ready');
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -24,22 +17,17 @@
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.05, rootMargin: '0px 0px 20% 0px' });
+  }, { threshold: 0.08, rootMargin: '0px 0px -4% 0px' });
 
-  revealItems.forEach((item) => observer.observe(item));
+  reveals.forEach((el, index) => {
+    el.style.transitionDelay = `${Math.min(index % 3, 2) * 70}ms`;
+    observer.observe(el);
+  });
 
   let ticking = false;
-  const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
-
   const update = () => {
-    const h = window.innerHeight || 1;
-    sections.forEach((section) => {
-      const rect = section.getBoundingClientRect();
-      const raw = (h - rect.top) / (h + rect.height);
-      const progress = clamp(raw);
-      section.style.setProperty('--p', progress.toFixed(4));
-      section.style.setProperty('--center', clamp(1 - Math.abs(progress - 0.5) * 2).toFixed(4));
-    });
+    const y = Math.min(1, window.scrollY / Math.max(1, window.innerHeight));
+    html.style.setProperty('--scroll', y.toFixed(4));
     ticking = false;
   };
 

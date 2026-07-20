@@ -13,120 +13,155 @@
   <link rel="manifest" href="./manifest.webmanifest" />
   <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
   <link rel="icon" href="./assets/icon-192.png" type="image/png" />
-  <link rel="stylesheet" href="./styles.css?v=19" />
+  <link rel="stylesheet" href="./styles.css?v=21" />
 </head>
 <body>
-  <div class="noise" aria-hidden="true"></div>
+  <div class="page-glow" aria-hidden="true"></div>
+
   <header class="site-header">
     <a class="brand" href="/" aria-label="dearest home"><span class="brand-mark">d</span><span>dearest</span></a>
-    <nav>
-      <a href="#story">Story</a>
-      <a href="#features">Features</a>
+    <nav aria-label="Main navigation">
+      <a href="#moments">Moments</a>
+      <a href="#approach">How it works</a>
       <a href="#privacy">Privacy</a>
       <a class="nav-cta" href="#launch">Coming soon</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero section-pad">
-      <div class="hero-copy">
+    <section class="hero section-shell dark-section" aria-label="dearest introduction">
+      <div class="ambient-cards" aria-hidden="true">
+        <div class="memory-card card-birthday"><span>Birthday</span><strong>Dad · Aug 14</strong><small>Record a voice note before the party</small></div>
+        <div class="memory-card card-letter"><span>Sealed letter</span><strong>For graduation day</strong><small>Opens when he turns 18</small></div>
+        <div class="memory-card card-voice"><span>Voice</span><strong>Mom’s story</strong><small>2:41 saved to family vault</small></div>
+      </div>
+
+      <div class="hero-content reveal">
         <p class="eyebrow">PRIVATE FAMILY JOURNAL</p>
         <h1>Keep the people you love close.</h1>
-        <p class="lead">A beautiful iOS space for letters, voice notes, pictures, videos, and future memories — private by default, made for family.</p>
+        <p class="lead">A calm iOS space for letters, voice notes, photos, videos, and sealed memories — private by default, made for family.</p>
         <div class="actions">
           <a class="primary" href="#launch">App Store coming soon</a>
-          <a class="secondary" href="#story">See how it feels</a>
-        </div>
-        <div class="hero-pills" aria-label="dearest feature highlights">
-          <span>Letters</span><span>Voice</span><span>Photos</span><span>Sealed memories</span>
+          <a class="secondary" href="#moments">See the experience</a>
         </div>
       </div>
-      <div class="hero-stage" aria-label="dearest app preview">
-        <div class="orb orb-a"></div>
-        <div class="orb orb-b"></div>
-        <img class="hero-phone back" src="./assets/marketing/secure-memory.jpeg" alt="Saved family memory in dearest." />
-        <img class="hero-phone front" src="./assets/marketing/two-phones.jpeg" alt="dearest app screens showing a private memory and home screen." />
-        <div class="float-card card-one"><b>Open later</b><span>For graduation day</span></div>
-        <div class="float-card card-two"><b>Private vault</b><span>No public feed</span></div>
-      </div>
-    </section>
 
-    <section id="story" class="quiet-scene section-pad" aria-label="dearest experience">
-      <div class="quiet-copy">
-        <p class="eyebrow">NOT A SOCIAL FEED</p>
-        <h2>A private place for what your family will want back someday.</h2>
-        <p>Letters, voices, photos, videos, and sealed memories — held together in one calm iOS space.</p>
-      </div>
-      <div class="quiet-visual" aria-label="dearest app preview">
-        <img class="quiet-phone phone-a" src="./assets/marketing/hero-home.jpeg" alt="dearest home screen." />
-        <img class="quiet-phone phone-b" src="./assets/marketing/new-memory.jpeg" alt="Create a new memory in dearest." />
-        <img class="quiet-phone phone-c" src="./assets/marketing/sealed-vault.jpeg" alt="Sealed future memories in dearest." />
+      <div class="hero-proof reveal" aria-label="dearest use cases">
+        <span>Built for</span>
+        <ul>
+          <li>parents</li>
+          <li>grandparents</li>
+          <li>kids</li>
+          <li>family stories</li>
+          <li>someday letters</li>
+        </ul>
       </div>
     </section>
 
-    <section id="features" class="feature-grid section-pad">
-      <article class="feature-card wide">
-        <div>
-          <p class="eyebrow">A MEMORY, NOT A FEED</p>
-          <h2>Letters, voice & media in one quiet place.</h2>
-          <p>Start with one note. Add a picture, your voice, or a video. Dearest keeps it organized around the people who matter.</p>
-        </div>
-        <img src="./assets/marketing/new-memory.jpeg" alt="New memory screen with letter, voice, picture, video, and all the above options." />
-      </article>
+    <section id="moments" class="moments section-shell dark-section" aria-label="Product moments">
+      <div class="section-intro reveal">
+        <p class="eyebrow">PRODUCT MOMENTS</p>
+        <h2>Show the app through small, human moments.</h2>
+        <p>Instead of a feed, Dearest is built around the quiet things families want to remember: a voice, a picture, a note, a promise for later.</p>
+      </div>
 
-      <article class="feature-card dark-card">
-        <img src="./assets/marketing/sealed-vault.jpeg" alt="Vault screen with sealed future memories." />
-        <div>
-          <p class="eyebrow">FOR SOMEDAY</p>
-          <h2>Seal memories for the future.</h2>
-          <p>Birthdays, graduations, anniversaries, and someday letters — saved now, opened later.</p>
-        </div>
-      </article>
+      <div class="moment-grid">
+        <article class="moment-panel panel-large reveal">
+          <div>
+            <p class="eyebrow">A MEMORY, NOT A FEED</p>
+            <h3>Write once. Add voice, photos, or video when words are not enough.</h3>
+          </div>
+          <img src="./assets/marketing/new-memory.jpeg" alt="Create a new memory in dearest." loading="lazy" />
+        </article>
 
-      <article class="feature-card dark-card">
-        <img src="./assets/marketing/story-card.jpeg" alt="Story card sharing screen." />
-        <div>
-          <p class="eyebrow">BEYOND THE SCREEN</p>
-          <h2>Turn memories into keepsakes.</h2>
-          <p>Story cards, PDFs, ZIP exports, and printable memory books coming soon.</p>
-        </div>
-      </article>
+        <article class="moment-panel reveal">
+          <img src="./assets/marketing/sealed-vault.jpeg" alt="Sealed future memories in dearest." loading="lazy" />
+          <div>
+            <p class="eyebrow">FOR SOMEDAY</p>
+            <h3>Seal memories for birthdays, graduations, and future days.</h3>
+          </div>
+        </article>
+
+        <article class="moment-panel reveal">
+          <img src="./assets/marketing/story-card.jpeg" alt="Story card sharing screen." loading="lazy" />
+          <div>
+            <p class="eyebrow">KEEPSAKES</p>
+            <h3>Turn memories into story cards, PDFs, ZIP exports, and books soon.</h3>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section class="showcase section-pad">
-      <div class="showcase-copy">
+    <section class="problem-band" aria-label="Why dearest matters">
+      <div class="problem-inner reveal">
+        <h2>Family memories deserve more than scattered texts and forgotten camera rolls.</h2>
+        <p>Life gets busy. Dearest gives important words, voices, and moments a place that feels intentional — not public, noisy, or disposable.</p>
+      </div>
+    </section>
+
+    <section id="approach" class="approach light-section" aria-label="How dearest works">
+      <div class="approach-inner">
+        <div class="section-intro reveal">
+          <p class="eyebrow">A NEW APPROACH</p>
+          <h2>A more intentional way to preserve family stories.</h2>
+          <p>Simple enough to start with one note. Structured enough to become a lasting family archive.</p>
+        </div>
+
+        <div class="approach-grid">
+          <article class="approach-card reveal">
+            <span>Memory</span>
+            <h3>Capture the moment</h3>
+            <p>Letters, voice, photos, videos, and “all of the above” memories live together.</p>
+          </article>
+          <article class="approach-card reveal">
+            <span>Privacy</span>
+            <h3>Keep it private</h3>
+            <p>No public feed. No likes. No performance. Just family content in a protected space.</p>
+          </article>
+          <article class="approach-card reveal">
+            <span>Future</span>
+            <h3>Save it for later</h3>
+            <p>Seal memories for future dates and export what matters when you need it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="showcase section-shell dark-section" aria-label="dearest app screens">
+      <div class="showcase-copy reveal">
         <p class="eyebrow">DESIGNED TO FEEL PERSONAL</p>
         <h2>Warm enough for family. Polished enough to trust.</h2>
-        <p>Dearest avoids social noise. No likes. No followers. No public timeline. Just protected memories with emotional weight.</p>
+        <p>Dearest should feel like opening a keepsake box — clean, safe, and emotionally valuable.</p>
       </div>
-      <div class="mosaic" aria-label="dearest app moments">
-        <img src="./assets/marketing/hero-home.jpeg" alt="dearest home screen." />
-        <img src="./assets/marketing/printable-book.jpeg" alt="Printable memory book coming soon screen." />
-        <img src="./assets/marketing/app-store-hero.jpeg" alt="dearest app store mockup." />
-      </div>
-    </section>
-
-    <section id="privacy" class="privacy-panel section-pad">
-      <div>
-        <p class="eyebrow">PRIVACY FIRST</p>
-        <h2>Created for family memories that should stay yours.</h2>
-        <a class="policy-link" href="/privacy">Read the Privacy Policy →</a>
-      </div>
-      <div class="privacy-grid">
-        <div><strong>Local/iCloud-first</strong><span>No backend-hosted memory vault by default.</span></div>
-        <div><strong>No selling data</strong><span>Private family content is not an ad product.</span></div>
-        <div><strong>User-controlled export</strong><span>Download files or PDFs. Print books are coming soon.</span></div>
-        <div><strong>Protected edits</strong><span>Face ID/PIN-style protection belongs around sensitive memories.</span></div>
+      <div class="device-stack reveal" aria-label="dearest app preview">
+        <img class="device-one" src="./assets/marketing/hero-home.jpeg" alt="dearest home screen." loading="lazy" />
+        <img class="device-two" src="./assets/marketing/two-phones.jpeg" alt="dearest app screens showing a private memory and home screen." loading="lazy" />
+        <img class="device-three" src="./assets/marketing/secure-memory.jpeg" alt="Saved family memory in dearest." loading="lazy" />
       </div>
     </section>
 
-    <section id="launch" class="final-cta section-pad">
-      <div>
+    <section id="privacy" class="trust section-shell dark-section" aria-label="Privacy and control">
+      <div class="trust-head reveal">
+        <p class="eyebrow">PRIVATE BY DESIGN</p>
+        <h2>Your family stories should stay yours.</h2>
+      </div>
+      <div class="trust-grid">
+        <article class="trust-card reveal"><h3>Local/iCloud-first</h3><p>No backend-hosted memory vault by default.</p></article>
+        <article class="trust-card reveal"><h3>No selling data</h3><p>Private family content is not an ad product.</p></article>
+        <article class="trust-card reveal"><h3>User-controlled export</h3><p>Download files or PDFs. Print books are coming soon.</p></article>
+        <article class="trust-card reveal"><h3>Protected edits</h3><p>Face ID/PIN-style protection belongs around sensitive memories.</p></article>
+      </div>
+      <a class="policy-link reveal" href="/privacy">Read the Privacy Policy →</a>
+    </section>
+
+    <section id="launch" class="final-cta section-shell dark-section">
+      <div class="final-copy reveal">
         <p class="eyebrow">IOS APP COMING SOON</p>
         <h2>Preserve your story.</h2>
-        <p>dearestapp.com</p>
+        <p>Start with one memory. Keep it somewhere worthy.</p>
+        <a class="primary" href="mailto:hello@dearestapp.com">Contact dearest</a>
       </div>
-      <img src="./assets/marketing/two-phones.jpeg" alt="Two dearest phone screens." />
+      <img class="final-image reveal" src="./assets/marketing/app-store-hero.jpeg" alt="dearest App Store preview." loading="lazy" />
     </section>
   </main>
 
@@ -135,6 +170,7 @@
     <a href="/privacy">Privacy Policy</a>
     <a href="mailto:hello@dearestapp.com">Contact</a>
   </footer>
-  <script src="./site.js?v=16" defer></script>
+
+  <script src="./site.js?v=17" defer></script>
 </body>
 </html>
