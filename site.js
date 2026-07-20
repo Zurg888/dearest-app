@@ -13,6 +13,18 @@
 
   html.classList.add('motion-ready');
 
+  let lenis;
+  if (window.Lenis) {
+    lenis = new window.Lenis({
+      duration: 0.95,
+      easing: (t) => 1 - Math.pow(1 - t, 3),
+      smoothWheel: true,
+      syncTouch: false,
+      wheelMultiplier: 0.85,
+    });
+    html.classList.add('lenis-ready');
+  }
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -54,6 +66,16 @@
   };
 
   update();
+
+  if (lenis) {
+    const raf = (time) => {
+      lenis.raf(time);
+      window.requestAnimationFrame(raf);
+    };
+    window.requestAnimationFrame(raf);
+    lenis.on('scroll', requestUpdate);
+  }
+
   window.addEventListener('scroll', requestUpdate, { passive: true });
   window.addEventListener('resize', requestUpdate, { passive: true });
 })();
